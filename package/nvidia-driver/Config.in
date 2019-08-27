@@ -110,6 +110,9 @@ config BR2_PACKAGE_NVIDIA_DRIVER_MODULE_DRM
 	bool "nvidia kernel drm modules"
 	default y
 
+config BR2_PACKAGE_NVIDIA_DRIVER_MODULE_PROGS
+	bool "nvidia kernel module related programs"
+
 endif # BR2_PACKAGE_NVIDIA_DRIVER_MODULE
 
 endif # BR2_PACKAGE_NVIDIA_DRIVER

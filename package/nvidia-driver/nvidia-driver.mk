@@ -149,6 +149,15 @@ ifeq ($(BR2_PACKAGE_NVIDIA_DRIVER_MODULE_DRM),y)
 NVIDIA_DRIVER_MODULES += nvidia-modeset nvidia-drm
 endif
 
+ifeq ($(BR2_PACKAGE_NVIDIA_DRIVER_MODULE_PROGS),y)
+NVIDIA_DRIVER_LIBS += \
+	libnvidia-cfg.so.$(NVIDIA_DRIVER_VERSION) \
+	libnvidia-ml.so.$(NVIDIA_DRIVER_VERSION)
+NVIDIA_DRIVER_PROGS += \
+	nvidia-persistenced \
+	nvidia-smi
+endif
+
 # They can't do everything like everyone. They need those variables,
 # because they don't recognise the usual variables set by the kernel
 # build system. We also need to tell them what modules to build.
