@@ -104,4 +104,12 @@ config BR2_PACKAGE_NVIDIA_DRIVER_MODULE
 	  provides Unified Memory access to the GPU and CPU memories for
 	  CUDA programs.
 
+if BR2_PACKAGE_NVIDIA_DRIVER_MODULE
+
+config BR2_PACKAGE_NVIDIA_DRIVER_MODULE_DRM
+	bool "nvidia kernel drm modules"
+	default y
+
+endif # BR2_PACKAGE_NVIDIA_DRIVER_MODULE
+
 endif # BR2_PACKAGE_NVIDIA_DRIVER

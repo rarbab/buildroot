@@ -141,9 +141,12 @@ endif
 # Build and install the kernel modules if needed
 ifeq ($(BR2_PACKAGE_NVIDIA_DRIVER_MODULE),y)
 
-NVIDIA_DRIVER_MODULES = nvidia nvidia-modeset nvidia-drm
+NVIDIA_DRIVER_MODULES = nvidia
 ifeq ($(BR2_x86_64)$(BR2_powerpc64le),y)
 NVIDIA_DRIVER_MODULES += nvidia-uvm
+endif
+ifeq ($(BR2_PACKAGE_NVIDIA_DRIVER_MODULE_DRM),y)
+NVIDIA_DRIVER_MODULES += nvidia-modeset nvidia-drm
 endif
 
 # They can't do everything like everyone. They need those variables,
