@@ -102,7 +102,7 @@ endif # X drivers
 ifeq ($(BR2_PACKAGE_NVIDIA_DRIVER_CUDA),y)
 NVIDIA_DRIVER_LIBS += \
 	libcuda.so.$(NVIDIA_DRIVER_VERSION) \
-	libnvidia-compiler.so.$(NVIDIA_DRIVER_VERSION) \
+	$(if $(BR2_x86_64),libnvidia-compiler.so.$(NVIDIA_DRIVER_VERSION)) \
 	libnvcuvid.so.$(NVIDIA_DRIVER_VERSION) \
 	libnvidia-fatbinaryloader.so.$(NVIDIA_DRIVER_VERSION) \
 	libnvidia-ptxjitcompiler.so.$(NVIDIA_DRIVER_VERSION) \
@@ -124,7 +124,7 @@ endif
 ifeq ($(BR2_PACKAGE_NVIDIA_DRIVER_MODULE),y)
 
 NVIDIA_DRIVER_MODULES = nvidia nvidia-modeset nvidia-drm
-ifeq ($(BR2_x86_64),y)
+ifeq ($(BR2_x86_64)$(BR2_powerpc64le),y)
 NVIDIA_DRIVER_MODULES += nvidia-uvm
 endif
 
