@@ -12,6 +12,9 @@ choice
 	help
 	  Select the version of binutils you wish to use.
 
+config BR2_BINUTILS_VERSION_2_38_X
+	bool "binutils 2.38"
+
 config BR2_BINUTILS_VERSION_2_39_X
 	bool "binutils 2.39"
 	select BR2_PACKAGE_BINUTILS_HAS_NO_LIBSFRAME
@@ -40,6 +43,7 @@ endchoice
 config BR2_BINUTILS_VERSION
 	string
 	default "arc-2023.09-release"	if BR2_BINUTILS_VERSION_ARC
+	default "2.38"		if BR2_BINUTILS_VERSION_2_38_X
 	default "2.39"		if BR2_BINUTILS_VERSION_2_39_X
 	default "2.40"		if BR2_BINUTILS_VERSION_2_40_X
 	default "2.41"		if BR2_BINUTILS_VERSION_2_41_X
@@ -50,6 +54,7 @@ config BR2_BINUTILS_VERSION
 config BR2_BINUTILS_GPROFNG
 	bool "gprofng support"
 	depends on !BR2_BINUTILS_VERSION_ARC
+	depends on !BR2_BINUTILS_VERSION_2_38_X
 	help
 	  This option enables support for gprofng, a new profiler.
 
