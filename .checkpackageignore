@@ -308,6 +308,9 @@ package/benejson/0002-Use-print-as-a-function-for-Py3-compatibility.patch lib_pa
 package/berkeleydb/0001-cwd-db_config.patch lib_patch.Upstream
 package/berkeleydb/0002-atomic_compare_exchange.patch lib_patch.Upstream
 package/bind/S81named Shellcheck lib_sysv.Indent lib_sysv.Variables
+package/binutils/2.39/0001-sh-conf.patch Upstream
+package/binutils/2.39/0002-poison-system-directories.patch Upstream
+package/binutils/2.39/0003-bfd-elf32-or1k-fix-building-with-gcc-version-5.patch Upstream
 package/bird/0001-configure.ac-fix-build-with-autoconf-2.70.patch lib_patch.Upstream
 package/bmx7/0001-Fix-schedule.c-378-36-error-SIOCGSTAMP-undeclared.patch lib_patch.Upstream
 package/bmx7/0002-Fix-linking-error.patch lib_patch.Upstream
